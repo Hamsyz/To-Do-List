@@ -1,23 +1,64 @@
 //create the empty array for tasks
-const tasks = [];
+let tasks = [];
 
-const form = document.getElementById("taskform");
+// get the saved data from the localstorage
+const saveddata = localStorage.getItem("taskdata");
 
-//stop the site from reloading
-form.addEventListener("submit", function(e) {
+if(saveddata) {
+    tasks = JSON.parse(saveddata);
+}
 
-    //stop the site from reloading
-    e.preventDefault();
 
-    //save the task and push it into array
-    const task = e.target.task.value;
-    tasks.push(task);
-})
+// get the address of container for future loop
+const container = document.getElementById("taskcontainer");
 
-//create a loop to show every task in the array
+//create a loop to load tasks 
 for (const task of [...tasks].reverse()) {
 
+    // create a new element (p) in memory
+    const newtaskpara = document.createElement("p");
+    // fill the newp with text
+    newtaskpara.textContent = task;
+    //adding a class to the p element
+    newtaskpara.classList.add("tasks");
+    //append the newp to the adress
+    container.appendChild(newtaskpara);
+
 }
+
+// get the adresses of form and input bar
+const form = document.getElementById("taskform");
+const taskinput = document.getElementById("taskinput");
+
+form.addEventListener("submit", function(e) {
+
+    // stop the site from reloading
+    e.preventDefault();
+
+    // save the task and push it into array
+    const task = e.target.task.value;
+    tasks.push(task);
+
+    // clear the input bar
+    taskinput.value = "";
+
+    // create a new element (p) in memory
+    const newtaskpara = document.createElement("p");
+    // fill the newp with text
+    newtaskpara.textContent = task;
+    // adding a class to the p element
+    newtaskpara.classList.add("tasks")
+    // append the newp to the adress
+    container.prepend(newtaskpara);
+
+    // update the the data
+    localStorage.setItem("taskdata", JSON.stringify(tasks));
+
+})
+
+
+
+
 
 
 

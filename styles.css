@@ -73,3 +73,28 @@ body   {
     transform: scale(1.10) ;
     transition: 80ms;
 }
+
+#taskcontainer  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 50px;
+    margin-top: 14px;
+}
+
+.tasks  {
+    color: #c8c8c8;
+    font-size: 23px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    width: 400px;
+    height: 45px;
+    border-radius: 10px;   
+    margin: 12px;
+    padding-left: 10px;
+    border-bottom: #615f5f dashed;
+
+}
