@@ -79,8 +79,8 @@ body   {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-right: 50px;
-    margin-top: 14px;
+    margin-right: 45px;
+    margin-top: 15px;
 }
 
 .tasks  {
@@ -91,10 +91,36 @@ body   {
     align-items: center;
     font-family: 'Inter', sans-serif;
     width: 400px;
-    height: 45px;
-    border-radius: 10px;   
+    height: 45px;  
     margin: 12px;
     padding-left: 10px;
-    border-bottom: #615f5f dashed;
+}
 
+.donebutton {
+    color: #615f5f;
+    font-size: 30px;
+    background-color: #2d2d30;
+    width: 40px;
+    height: 40px; 
+    border: 3px solid #615f5f;
+    border-radius: 13px;  
+    margin-left: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: 400ms ease;
+}
+
+.donebutton:hover {
+    transform: scaleX(1.2) scaleY(1.2); 
+    background-color: #393838;
+}
+
+.subcontainer   {
+    display: flex;
+    align-items: center;
+    border-radius: 10px; 
+    border-bottom: #615f5f solid 1px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    width: 450px;
+    margin-bottom: 12px;
 }
