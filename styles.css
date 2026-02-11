@@ -122,5 +122,6 @@ body   {
     border-bottom: #615f5f solid 1px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     width: 450px;
-    margin-bottom: 12px;
+    margin-bottom: 15px;
+    height: 60px;
 }
