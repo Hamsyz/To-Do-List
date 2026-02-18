@@ -115,6 +115,12 @@ body   {
     background-color: #393838;
 }
 
+.donebutton:active {
+    transform: scale(0.90);
+    background-color: #a2a2a2;
+    transition: 100ms ease;
+}
+
 .subcontainer   {
     display: flex;
     align-items: center;
