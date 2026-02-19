@@ -35,13 +35,12 @@ for (const task of [...tasks].reverse()) {
     const donebutton = document.createElement("button");
     // adding  a class to the new button
     donebutton.classList.add("donebutton");
-    //prepend the new p to the adress
+    //prepend the new button to the adress
     subcontainer.prepend(donebutton);
 
-    // adding a event listene for the button
-    donebutton.addEventListener("click", function(click){
-        this.parentElement.remove()
-    })
+    // add functinoality to button
+    buttonfunc(donebutton)
+
 }
 
 // get the adresses of form and input bar
@@ -83,15 +82,31 @@ form.addEventListener("submit", function(e) {
     //prepend the new p to the adress
     subcontainer.prepend(donebutton)
 
-        // adding a event listene for the button
-    donebutton.addEventListener("click", function(click){
-        this.parentElement.remove()
-    })
+    // add functinoality to button
+    buttonfunc(donebutton)
 
     // update the the data
     localStorage.setItem("taskdata", JSON.stringify(tasks));
 
 })
+
+function buttonfunc(donebutton) {
+
+    // adding a event listener for the button
+    donebutton.addEventListener("click", function(click){
+    this.parentElement.remove()
+
+    // update the data after task is done
+    donetask = this.parentElement.querySelector("p").innerText; 
+
+    tasks = tasks.filter(function(e) {
+        // filter the donetask
+        return e !== donetask;
+    })
+
+    localStorage.setItem("taskdata", JSON.stringify(tasks));
+    })
+}
 
 
 
